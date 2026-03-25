@@ -1,0 +1,9 @@
+{
+  "source_directories": [
+    "."
+  ],
+  "site_package_search_strategy": "pep561",
+  "search_path": [
+    "C:\\Users\\srini\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages"
+  ]
+}

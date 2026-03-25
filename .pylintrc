@@ -1,0 +1,3 @@
+[MESSAGES CONTROL]
+# C0103: Module names in POM frameworks conventionally use PascalCase (e.g., BasePage.py)
+disable=C0103

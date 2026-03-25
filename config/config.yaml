@@ -1,0 +1,7 @@
+# Author: Srinivasa Rao Thata
+# Year: 2026
+# Context: Healthcare Member Portal (Simulated via ParaBank)
+base_url: "https://parabank.parasoft.com/parabank/index.htm"
+member_credentials:
+  username: "john" # default parabank test account
+  password: "demo"
