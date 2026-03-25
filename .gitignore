@@ -34,6 +34,9 @@ coverage.xml
 logs/
 reports/
 *.log
+*_errors.txt
+flake8.txt
+errors.txt
 
 # Screenshots (generated during test runs)
 screenshots/
