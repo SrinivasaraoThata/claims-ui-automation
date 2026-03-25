@@ -24,7 +24,9 @@ def browser():
     """
     logger.info("Initializing Member Portal Browser Session...")
     options = Options()
-    # options.add_argument("--headless") # Useful for CI/CD pipelines
+    options.add_argument("--headless=new") # Required for CI/CD (GitHub Actions)
+    options.add_argument("--no-sandbox") # Recommended for Linux runners
+    options.add_argument("--disable-dev-shm-usage") # Recommended for Linux runners
     options.add_argument("--window-size=1920,1080")
 
     # Initialize Chrome WebDriver (Selenium 4 natively manages drivers)
