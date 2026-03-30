@@ -1,23 +1,10 @@
-# Author: Srinivasa Rao Thata
-# Year: 2026
 """Test suite for validating Healthcare Member claim status visibility."""
-
-import os
-
-import yaml
 
 from pages.LoginPage import MemberLoginPage
 from pages.ClaimsOverviewPage import ClaimsOverviewPage
 
-# Load configuration dynamically
-CONFIG_PATH = os.path.join(
-    os.path.dirname(__file__), '..', 'config', 'config.yaml'
-)
-with open(CONFIG_PATH, 'r', encoding='utf-8') as file:
-    config = yaml.safe_load(file)
 
-
-def test_member_claim_status(browser):
+def test_member_claim_status(browser, config):
     """
     Test Case: Verify member can view claim status successfully.
     """

@@ -1,5 +1,3 @@
-# Author: Srinivasa Rao Thata
-# Year: 2026
 """Base page abstraction layer for all Selenium page interactions."""
 
 import logging
@@ -18,9 +16,20 @@ class BasePage:
         self.wait = WebDriverWait(self.driver, 15)
         self.logger = logging.getLogger(__name__)
 
+    def verify_session_is_active(self, logout_link_locator):
+        """
+        Health Check: Ensures the session is still active by checking for the logout link.
+        This prevents cascading failures if ParaBank times out.
+        """
+        self.logger.info("Verifying active session via locator: %s", logout_link_locator)
+        if not self.is_visible(logout_link_locator):
+            self.logger.warning("Session lost! Redirecting to login or raising exception.")
+            return False
+        return True
+
     def open_url(self, url):
         """Navigate the browser to the specified URL."""
-        self.logger.info("Navigating to Member Portal: %s", url)
+        self.logger.info("Navigating to: %s", url)
         self.driver.get(url)
 
     def find_element(self, locator):

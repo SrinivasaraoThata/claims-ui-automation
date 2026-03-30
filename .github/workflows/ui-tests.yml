@@ -1,14 +1,10 @@
-# Author: Srinivasa Rao Thata
-# Year: 2026
 name: Healthcare Member Portal - UI Automation
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   test_claims_portal:
@@ -30,4 +26,13 @@ jobs:
 
     - name: Run Claims UI Tests
       run: |
-        pytest tests/ -v
+        pytest tests/ -v --html=report.html --self-contained-html
+
+    - name: Upload Artifacts (Screenshots & Reports)
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: |
+          screenshots/
+          report.html

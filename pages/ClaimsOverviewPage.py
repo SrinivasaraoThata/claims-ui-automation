@@ -1,5 +1,3 @@
-# Author: Srinivasa Rao Thata
-# Year: 2026
 """Claims Overview page object mapped to ParaBank Accounts Overview."""
 
 from selenium.webdriver.common.by import By

@@ -1,7 +1,10 @@
-# Author: Srinivasa Rao Thata
-# Year: 2026
-# Context: Healthcare Member Portal (Simulated via ParaBank)
 base_url: "https://parabank.parasoft.com/parabank/index.htm"
 member_credentials:
   username: "john" # default parabank test account
   password: "demo"
+
+# Browser Configuration
+browser:
+  headless: true # Recommended for CI/CD environments
+  timeout: 15    # Default WebDriverWait timeout
+  implicit_wait: 0 # We use Explicit Waits (WebDriverWait) for better stability

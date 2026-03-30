@@ -1,5 +1,3 @@
-# Author: Srinivasa Rao Thata
-# Year: 2026
 """Login page object for the Healthcare Member Portal."""
 
 from selenium.webdriver.common.by import By
