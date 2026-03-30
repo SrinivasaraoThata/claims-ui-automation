@@ -5,6 +5,8 @@
 [![Pytest](https://img.shields.io/badge/Pytest-Ready-0E7FBF?logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![GitHub Actions](https://img.shields.io/badge/CI%2FCD-Passing-2088FF?logo=github-actions&logoColor=white)](https://github.com/SrinivasaraoThata/claims-ui-automation/actions)
 
+🔗 **Part of a larger Ecosystem**: This repository is the **UI validation pillar** of the [Healthcare Claims: Quality Engineering Strategy Hub](https://github.com/SrinivasaraoThata/claims-qa-suite).
+
 ## The Problem Space
 Automating a healthcare portal isn't just about clicking buttons; it's about handling sensitive workflows without the luxury of real member data (PHI). I built this framework to solve three specific challenges:
 
@@ -72,7 +74,6 @@ Even a mature suite has room for growth. Currently identifying:
 ## Traceability & Compliance
 For a breakdown of how automation maps to business needs, see the [RTM (Requirements Traceability Matrix)](docs/rtm.md).
 
-## Author
-**Srinivasa Rao Thata**  
-Senior QA Automation Engineer  
-Python | Selenium | Pytest | CI/CD Implementation
+---
+**Srinivasa Rao Thata** | Lead QA Automation Engineer
+`Quality Engineering | Strategic UI Automation`
