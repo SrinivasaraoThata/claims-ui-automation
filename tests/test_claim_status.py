@@ -4,10 +4,8 @@ from pages.LoginPage import MemberLoginPage
 from pages.ClaimsOverviewPage import ClaimsOverviewPage
 
 
-def test_member_claim_status(browser, config):
-    """
-    Test Case: Verify member can view claim status successfully.
-    """
+def test_adjudication_status_req_clm_02(browser, config):
+    """Validates REQ-CLM-02: Real-time Adjudication Status Updates."""
     member_username = config['member_credentials']['username']
     member_password = config['member_credentials']['password']
     portal_url = config['base_url']

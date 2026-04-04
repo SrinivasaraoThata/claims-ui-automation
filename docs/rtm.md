@@ -1,8 +1,12 @@
 # Requirements Traceability Matrix (RTM)
 
-| Requirement ID | Feature | Test Case | Complexity | Technical Notes |
-|----------------|---------|-----------|------------|-----------------|
-| **REQ-01** | User Auth | Login with Valid Credentials | Low | Standard POM implementation. |
-| **REQ-02** | Accounts | Dashboard Data Validation | Medium | Uses Regex to scrub currency symbols before assertion. |
-| **REQ-03** | Transfers | Funds Transfer Between Accounts | High | Requires "Session Health Check" to ensure login didn't drop mid-flow. |
-| **REQ-04** | Services | Loan Request Submission | High | Challenge: Asynchronous success message; uses FluentWait. |
+| Feature ID | Business Requirement                    | UI  |
+|------------|-----------------------------------------|-----|
+| REQ-LOG-01 | Secure Member Authentication            | ✅  |
+| REQ-CLM-01 | Claim Submission & Validation           | ✅  |
+| REQ-CLM-02 | Real-time Adjudication Status Updates   | ✅  |
+| REQ-HIS-01 | Historical Claims Retrieval >24 months  | ✅  |
+| REQ-CLM-03 | Denial Reason Code Mapping (ICD-10)     | 📋  |
+| REQ-SEC-01 | PII/PHI Masking in UI/Payloads          | 📋  |
+
+**Legend:** ✅ Implemented | 📋 Planned | - Not in scope
