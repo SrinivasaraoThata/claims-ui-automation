@@ -5,6 +5,8 @@ import pytest
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from pages.LoginPage import MemberLoginPage
+from pages.ClaimsOverviewPage import ClaimsOverviewPage
 
 # Basic logging configuration for the Healthcare Claims Automation
 logging.basicConfig(
@@ -52,6 +54,34 @@ def browser(config):
     driver.quit()
 
 
+@pytest.fixture(scope="session")
+def authenticated_browser(browser, config):
+    """
+    Shared authenticated session fixture.
+    Performs a single login for the entire test session, avoiding
+    repeated authentication round-trips to the external portal in CI.
+    All tests that require an active session should use this fixture.
+    """
+    logger.info("Establishing shared authenticated session for test suite...")
+
+    login_page = MemberLoginPage(browser)
+    claims_page = ClaimsOverviewPage(browser)
+
+    login_page.open_url(config['base_url'])
+    login_page.login_as_member(
+        config['member_credentials']['username'],
+        config['member_credentials']['password']
+    )
+
+    assert claims_page.is_claims_overview_displayed(), (
+        "Session setup failed: Claims Overview not displayed after login. "
+        "All tests will be skipped due to authentication failure."
+    )
+
+    logger.info("Shared authenticated session established successfully.")
+    yield browser
+
+
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     """
@@ -62,7 +92,7 @@ def pytest_runtest_makereport(item, call):
     report = outcome.get_result()
 
     if report.when == "call" and report.failed:
-        driver = item.funcargs.get("browser")
+        driver = item.funcargs.get("authenticated_browser") or item.funcargs.get("browser")
         if driver:
             if not os.path.exists("screenshots"):
                 os.makedirs("screenshots")

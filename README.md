@@ -75,5 +75,5 @@ Even a mature suite has room for growth. Currently identifying:
 For a breakdown of how automation maps to business needs, see the [RTM (Requirements Traceability Matrix)](docs/rtm.md).
 
 ---
-**Srinivasa Rao Thata** | Lead QA Automation Engineer
+**Srinivasa Rao Thata** | Senior QA Automation Engineer
 `Quality Engineering | Strategic UI Automation`
